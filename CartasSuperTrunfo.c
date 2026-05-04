@@ -13,6 +13,8 @@ int main(){
     float area;
     float pib;
     int num_pontos;
+    float dens_populacional;
+    float pib_per_capita;
 
     printf("Digite o numero da carta: \n");
     scanf("%d", &num_carta);
@@ -37,12 +39,19 @@ int main(){
 
     printf("Digite numero de pontos turisticos: \n");
     scanf("%d", &num_pontos);
-  
+
+    dens_populacional = (float)populacao / area;
+    //Multiplicamos o pib por 1 bilhao (1 seguido de 9 zeros)
+    pib_per_capita = (pib * 1000000000) / (float)populacao;
+
     printf("\n--- CARTA CADASTRADA ---\n");
     printf("Nome do Estado: %s\nCodigo: %s\n", estado, codigo);
     printf("Nome da Cidade: %s\nPopulacao: %d\n", cidade, populacao);
     printf("Area: %.2f\nPIB: %.2f\n", area, pib);
-    printf("Pontos Turisticos: %d\nCarta: %d\n", num_pontos, num_carta);
+    printf("Numero de pontos turisticos: %d\nCarta: %d\n", num_pontos, num_carta);
+
+    printf("Densidade populacional: %.2f\n", dens_populacional);
+    printf("Pib per capita: %.2f\n", pib_per_capita);
 
     return 0;
-} 
+}  
